@@ -1,5 +1,7 @@
 package org.ldv.melun.sio.swingpac.etudiants;
 
+import java.awt.Color;
+
 import org.ldv.melun.sio.swingpac.Bidule;
 
 public class Toto extends Bidule {
@@ -9,12 +11,15 @@ public class Toto extends Bidule {
   }
 
   public Toto() {
-    super("Tonton");
+    super("zoé");
+    setBackground(Color.yellow);
   }
 
   
   @Override
   public void doMove() {
+	  setIncX(0);
+	  setIncY(0);
     super.doMove();
   }
 

@@ -12,7 +12,7 @@ public class Simple extends Bidule {
     setBackground(Color.PINK);    
   }
 
-  @Override
+   @Override
   public void doMove() {  
     super.doMove();    
   }

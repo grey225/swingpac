@@ -26,6 +26,7 @@ public class FenetreMain extends JFrame implements ActionListener {
   static final String ACTION_QUITTER = "Quitter";
 
   static final String ACTION_GO = "Go";
+  static final String ACTION_BREAK = "break";
 
   private static final String PACKAGE_BIDULES = "org.ldv.melun.sio.swingpac.etudiants";
 
@@ -80,7 +81,14 @@ public class FenetreMain extends JFrame implements ActionListener {
     // l'instance de cette fenêtre est à l'écoute d'une action sur ce menu
     mn.addActionListener(this);
     jeu.add(mn);
-    menuBar.add(jeu);
+    
+    jeu.setMnemonic(KeyEvent.VK_J);
+    PMenuItem a = new PMenuItem("pause", KeyEvent.VK_G);
+    a.setActionCommand(ACTION_BREAK);
+    a.addActionListener(this);
+    jeu.add(a);
+    //
+    
 
     // TODO : ajouter une commande Pause qui stoppe le timer de tous les objets
     // Bidule.
