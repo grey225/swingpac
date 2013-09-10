@@ -82,12 +82,12 @@ public class FenetreMain extends JFrame implements ActionListener {
     mn.addActionListener(this);
     jeu.add(mn);
     
-    jeu.setMnemonic(KeyEvent.VK_J);
+  /*  jeu.setMnemonic(KeyEvent.VK_J);
     PMenuItem a = new PMenuItem("pause", KeyEvent.VK_G);
     a.setActionCommand(ACTION_BREAK);
     a.addActionListener(this);
     jeu.add(a);
-    //
+    */
     
 
     // TODO : ajouter une commande Pause qui stoppe le timer de tous les objets
