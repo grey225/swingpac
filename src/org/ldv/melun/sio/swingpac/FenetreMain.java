@@ -1,5 +1,6 @@
 package org.ldv.melun.sio.swingpac;
 
+import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -26,6 +27,10 @@ public class FenetreMain extends JFrame implements ActionListener {
   static final String ACTION_QUITTER = "Quitter";
 
   static final String ACTION_GO = "Go";
+  
+  static final String ACTION_BREAK = "Break";
+  
+  static final String ACTION_NBREAK = "Restart";
 
   private static final String PACKAGE_BIDULES = "org.ldv.melun.sio.swingpac.etudiants";
 
@@ -85,9 +90,15 @@ public class FenetreMain extends JFrame implements ActionListener {
     // TODO : ajouter une commande Pause qui stoppe le timer de tous les objets
     // Bidule.
     JMenuItem Break = new JMenuItem("Break", KeyEvent.VK_B);
-    mn.setActionCommand(ACTION_BREAK);
-    mn.addActionListener(this);
+    Break.setActionCommand(ACTION_BREAK);
+    Break.addActionListener(this);
     jeu.add(Break);
+    menuBar.add(jeu);
+    
+    JMenuItem Nbreak = new JMenuItem("Restart", KeyEvent.VK_R);
+    Nbreak.setActionCommand(ACTION_NBREAK);
+    Nbreak.addActionListener(this);
+    jeu.add(Nbreak);
     menuBar.add(jeu);
    
 
@@ -144,6 +155,20 @@ public class FenetreMain extends JFrame implements ActionListener {
       System.exit(0);
     } else if (action.equals(ACTION_GO)) {
       go();
+    } else if (action.equals(ACTION_BREAK)) {
+        for (Component obj : getContentPane().getComponents())
+            if (obj instanceof Bidule){
+            	Bidule b = (Bidule) obj;
+            	b.stop();
+            } 
+    }      else if (action.equals(ACTION_NBREAK)) {
+                        for (Component obj : getContentPane().getComponents())
+                            if (obj instanceof Bidule){
+                            	Bidule b = (Bidule) obj;
+                            	b.start();
+                            
+            
+      }                            	
     }
   }
 
