@@ -4,18 +4,16 @@ import java.awt.Color;
 
 import org.ldv.melun.sio.swingpac.Bidule;
 
-public class Boulet extends Bidule {
+public class Gregy extends Bidule {
 
   
-  public Boulet() {
-    super("bozier");
-    setBackground(Color.PINK);    
+  public Gregy() {
+    super("gregy");
+    setBackground(Color.GREEN);    
   }
 
    @Override
   public void doMove() { 
-	   setIncX(0);
-	   setIncY(0);
     super.doMove();    
   }
 
